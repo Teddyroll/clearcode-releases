@@ -1,27 +1,34 @@
 # 澄码 / Clearcode 安装包
 
-这是澄码的安装包发布仓库。通过本仓库的 Releases 下载 Windows 版本及更新文件。
+这是澄码的安装包发布仓库。通过本仓库的 Releases 下载 Windows、Mac 测试安装包和校验文件。
 
-澄码是独立的 OpenCode V2 客户端。Windows 安装包适用于普通 Intel / AMD 的 Windows 10 / 11 64 位电脑，内置 OpenCode；首次启动按引导连接内核、选择项目并登录自己的模型账户。
+澄码是独立的 OpenCode V2 客户端，内置 OpenCode；首次启动按引导连接内核、选择项目并登录自己的模型账户。应用数据和模型账户配置保存在自己的电脑上。
+
+## 当前版本：0.1.34
+
+- 项目自主浏览器：明确授权网站、时长和调用次数，支持导航、观察、点击、填写、按键和截图，沿用原生审批。使用独立临时资料，停止、到期或网关重建后不自动续权。
+- 任务检查与自动修复：确认检查清单，在原预算内修复并执行全项回归，保留人工验收。
+- 修复已有会话授权浏览器后，动态工具尚未就绪就开放发送的问题；恢复和停止绑定确切任务归属，不自动重发旧动作。
+
+[查看 0.1.34 更新说明与全部附件](https://github.com/Teddyroll/clearcode-releases/releases/tag/v0.1.34)
+
+| 平台 | 安装包与验证范围 |
+| --- | --- |
+| Windows 10 / 11 x64，Intel / AMD | 未签名测试 EXE；已核验编译、内嵌代码、依赖、内核和更新配置。本轮实机安装、首启与覆盖升级暂缓。 |
+| Mac，Apple 芯片，macOS 26.0+ | ad-hoc 签名测试 DMG，未使用 Developer ID 签名、未经 Apple 公证；实际应用和隔离覆盖验收通过，手动安装。 |
+
+[下载 Windows 0.1.34](https://github.com/Teddyroll/clearcode-releases/releases/download/v0.1.34/Clearcode-0.1.34-win-x64-UNSIGNED.exe) · [下载 Mac 0.1.34](https://github.com/Teddyroll/clearcode-releases/releases/download/v0.1.34/Clearcode-0.1.34-arm64-LOCAL-TEST.dmg)
+
+下载后可核对同名 `.sha256` 文件。自主浏览器不包含全桌面控制、现有登录浏览器接管、密码填写、上传下载或验证码处理。本次工具链验收使用本地脚本化 provider，没有真实付费模型调用，不代表模型编程能力评分。
 
 ## Windows 更新
 
-已安装 0.1.2 或更高版本时，在「设置 → 应用更新」填写本仓库的最新版下载目录地址，然后检查更新。每个发布版本同时提供安装器、SHA-256 校验文件、blockmap 和 latest.yml 更新清单。
-
-关闭澄码后也可以直接运行新版安装包覆盖安装；无需先卸载。应用数据和模型账户配置保存在自己的电脑上。
-
-## 当前发布状态
-
-当前安装包是未签名测试版，Windows 可能提示未知发布者；下载后可核对同名 .sha256 文件。构建和内嵌内容已验证，Windows 实机安装仍需在目标电脑确认。
-
-本仓库只发布可分发的安装包、公开说明和校验信息。
-
-## 固定地址
-
-Windows 更新地址：
+已安装 0.1.2 或更高版本时，在「设置 → 应用更新」填写下面的固定地址，然后检查更新。每个发布版本同时提供安装器、SHA-256 校验文件、blockmap 和 `latest.yml` 更新清单。
 
 ```text
 https://github.com/Teddyroll/clearcode-releases/releases/latest/download/
 ```
 
-[下载最新 Windows 安装包](https://github.com/Teddyroll/clearcode-releases/releases/latest)
+关闭澄码后也可以直接运行新版安装包覆盖安装。请先保存草稿和备份资料。Mac 当前通过 DMG 手动更新。
+
+任务台账新增全项回归记录；如需降级，请使用对应版本备份。本仓库只发布可分发的安装包、公开说明和校验信息。
