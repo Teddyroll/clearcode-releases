@@ -4,20 +4,20 @@
 
 澄码是独立的 OpenCode V2 客户端，内置 OpenCode；首次启动按引导连接内核、选择项目并登录自己的模型账户。应用数据和模型账户配置保存在自己的电脑上。
 
-## 当前版本：0.1.34
+## 当前版本：0.1.35
 
-- 项目自主浏览器：明确授权网站、时长和调用次数，支持导航、观察、点击、填写、按键和截图，沿用原生审批。使用独立临时资料，停止、到期或网关重建后不自动续权。
-- 任务检查与自动修复：确认检查清单，在原预算内修复并执行全项回归，保留人工验收。
-- 修复已有会话授权浏览器后，动态工具尚未就绪就开放发送的问题；恢复和停止绑定确切任务归属，不自动重发旧动作。
+- 修复 Windows 安装包在「安全停止旧版本」检查阶段必定失败的问题：安全检查脚本被放进安装包根目录，运行时却从 `$PLUGINSDIR` 读取。0.1.30、0.1.34 均受影响，换任何 Windows 机器结果相同。
+- 安装脚本改为 `File /oname=$PLUGINSDIR\prepare-windows-install.ps1`；安装、覆盖升级和卸载的任务检查、进程归属校验与原生原子删除流程保持不变。
+- 功能与 0.1.34 相同：项目自主浏览器、任务检查与自动修复、全项回归。
 
-[查看 0.1.34 更新说明与全部附件](https://github.com/Teddyroll/clearcode-releases/releases/tag/v0.1.34)
+[查看 0.1.35 更新说明与全部附件](https://github.com/Teddyroll/clearcode-releases/releases/tag/v0.1.35)
 
 | 平台 | 安装包与验证范围 |
 | --- | --- |
-| Windows 10 / 11 x64，Intel / AMD | 未签名测试 EXE；已核验编译、内嵌代码、依赖、内核和更新配置。本轮实机安装、首启与覆盖升级暂缓。 |
-| Mac，Apple 芯片，macOS 26.0+ | ad-hoc 签名测试 DMG，未使用 Developer ID 签名、未经 Apple 公证；实际应用和隔离覆盖验收通过，手动安装。 |
+| Windows 10 / 11 x64，Intel / AMD | 未签名测试 EXE；已核验编译、内嵌代码、依赖、内核与更新配置，并确认成品内安全检查脚本位于 `$PLUGINSDIR`。本轮 Windows 实机安装、首启与覆盖升级未执行。 |
+| Mac，Apple 芯片，macOS 26.0+ | ad-hoc 签名测试 DMG，未使用 Developer ID 签名、未经 Apple 公证；已挂载核验版本与内核清单，应用代码与 0.1.34 相同，本次未重跑打包应用的运行验收；手动安装。 |
 
-[下载 Windows 0.1.34](https://github.com/Teddyroll/clearcode-releases/releases/download/v0.1.34/Clearcode-0.1.34-win-x64-UNSIGNED.exe) · [下载 Mac 0.1.34](https://github.com/Teddyroll/clearcode-releases/releases/download/v0.1.34/Clearcode-0.1.34-arm64-LOCAL-TEST.dmg)
+[下载 Windows 0.1.35](https://github.com/Teddyroll/clearcode-releases/releases/download/v0.1.35/Clearcode-0.1.35-win-x64-UNSIGNED.exe) · [下载 Mac 0.1.35](https://github.com/Teddyroll/clearcode-releases/releases/download/v0.1.35/Clearcode-0.1.35-arm64-LOCAL-TEST.dmg)
 
 下载后可核对同名 `.sha256` 文件。自主浏览器不包含全桌面控制、现有登录浏览器接管、密码填写、上传下载或验证码处理。本次工具链验收使用本地脚本化 provider，没有真实付费模型调用，不代表模型编程能力评分。
 
